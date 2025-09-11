@@ -43,7 +43,7 @@ form?.addEventListener('submit', (e) => {
     }
 
     if (isValid){
-        dialog.innerHTML = `
+        dlg.innerHTML = `
         <div class = "mock-page">
             <h1>Спасибо за заявку</h1>
             <p>Мы свяжемся с вами в близжайшее время</p>
