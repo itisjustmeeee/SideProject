@@ -29,7 +29,7 @@ form?.addEventListener('submit', (e) => {
         errorMs += 'введите корректный email.\n';
         isValid = false;
     }
-    if (!phone){
+    if (!phone || !/^\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}$/.test(phone)){
         errorMs += 'введите корректный номер в формате: +7 (XXX) XXX-XX-XX.\n';
         isValid = false;
     }
@@ -71,4 +71,4 @@ phone?.addEventListener('input', () => {
  if (d.length >= 10) parts.push('-' + d.slice(9,11));
  phone.value = parts.join('');
 });
-phone?.setAttribute('pattern', '^\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}$');
+phone?.setAttribute('pattern', '^\\+7 \\([0-9]{3}\\) [0-9]{3}-[0-9]{2}-[0-9]{2}$');
