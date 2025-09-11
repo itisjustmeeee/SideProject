@@ -27,3 +27,45 @@ button, [type="submit"] {
 button:hover { filter: brightness(0.95); }
 :disabled, [aria-disabled="true"] { opacity: .6; cursor: not-allowed; }
 [aria-invalid="true"] { border-color: #b00020; }
+
+:root{
+ --color-bg:#fff; --color-fg:#0b0b0b; --color-muted:#666;
+ --color-primary:#0a84ff; --color-danger:#b00020;
+
+ --font-body:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+ --space-1:4px; --space-2:8px; --space-3:16px; --space-4:24px; --space5:40px;
+
+ --radius:12px;
+ --shadow:0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.08);
+}
+
+body.theme-dark{
+ --color-bg:#0b0b0b; --color-fg:#f5f5f5; --color-muted:#aaa;
+ --color-primary:#6aa2ff;
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+ background:var(--color-bg);
+ color:var(--color-fg);
+ font-family:var(--font-body);
+ line-height:1.5;
+}
+
+.container{ width:min(100% - 2*var(--space-4), 1120px); margin-inline:auto; }
+
+.section{ padding-block:var(--space-5); }
+.section__title{ margin:0 0 var(--space-3); }
+
+a:link{color: green;} a:visited{color: blueviolet;} a:hover{color: darkseagreen;} a:active{color: darkkhaki;}
+
+:where(a,button,input,select,textarea):focus-visible{
+ outline:2px solid var(--color-primary);
+ outline-offset:2px;
+}
+
+:disabled,[aria-disabled="true"]{opacity:.6;cursor:not-allowed;}
+
+html{ scroll-behavior:smooth;}
+:target{ outline:2px dashed var(--color-primary); outline-offset:4px; }
