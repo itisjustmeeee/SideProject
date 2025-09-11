@@ -29,7 +29,7 @@ form?.addEventListener('submit', (e) => {
         errorMs += 'введите корректный email.\n';
         isValid = false;
     }
-    if (!phone || !/^\(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(phone)){
+    if (!phone){
         errorMs += 'введите корректный номер в формате: +7 (XXX) XXX-XX-XX.\n';
         isValid = false;
     }
