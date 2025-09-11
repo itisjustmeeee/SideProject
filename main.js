@@ -11,6 +11,26 @@ openBtn.addEventListener('click', () => {
 });
 closeBtn.addEventListener('click', () => dlg.close('cancel'));
 form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const date = document.getElementById('date').value.trim();
+    const topic = document.getElementById('topic').value.trim();
+
+    if (name && email && phone && date && topic){
+        dialog.innerHTML = `
+        <div class = "mock-page">
+            <h1>Спасибо за заявку</h1>
+            <p>Мы свяжемся с вами в близжайшее время</p>
+            <button onclick = "this.closest('dialog').close()">Закрыть</button>
+        </div>
+        `;
+    }
+    else{
+        alert('Ошибка: заполните данные до конца');
+    }
+
 });
 dlg.addEventListener('close', () => { lastActive?.focus(); });
 
