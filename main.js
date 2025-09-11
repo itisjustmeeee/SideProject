@@ -18,7 +18,31 @@ form?.addEventListener('submit', (e) => {
     const date = document.getElementById('date').value.trim();
     const topic = document.getElementById('topic').value.trim();
 
-    if (name && email && phone && date && topic){
+    let isValid = true;
+    let errorMs = ''
+
+    if (!name || name.length < 2){
+        errorMs += 'Имя не должно быть короче 2 символов.\n';
+        isValid = false;
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        errorMs += 'введите корректный email.\n';
+        isValid = false;
+    }
+    if (!phone || !/^\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}$/.test(phone)){
+        errorMs += 'введите корректный номер в формате: +7 (XXX) XXX-XX-XX.\n';
+        isValid = false;
+    }
+    if (!date){
+        errorMs += 'выберите дату.\n';
+        isValid = false;
+    }
+    if (!topic){
+        errorMs += 'выберите тему.\n';
+        isValid = false;
+    }
+
+    if (isValid){
         dialog.innerHTML = `
         <div class = "mock-page">
             <h1>Спасибо за заявку</h1>
@@ -28,7 +52,7 @@ form?.addEventListener('submit', (e) => {
         `;
     }
     else{
-        alert('Ошибка: заполните данные до конца');
+        alert('Ошибка: ' + errorMs);
     }
 
 });
