@@ -71,8 +71,7 @@ html{ scroll-behavior:smooth;}
 :target{ outline:2px dashed var(--color-primary); outline-offset:4px; }
 
 .hero{
- background:
- linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.15)), url("assets/fon.jpg") center/cover no-repeat;
+ background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.15)), url("assets/fon.jpg") center/cover no-repeat;
  color:#fff;
  padding: clamp(2rem, 6vw, 6rem) 1rem;
  border-radius:var(--radius);
