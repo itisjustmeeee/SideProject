@@ -77,5 +77,4 @@ html{ scroll-behavior:smooth;}
  color:#fff;
  padding: clamp(2rem, 6vw, 6rem) 1rem;
  border-radius:var(--radius);
- min-height: 200px;
 }
