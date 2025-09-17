@@ -112,3 +112,18 @@ html{ scroll-behavior:smooth;}
         width: 90%;
     }
 }
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-link {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #008000;
+}
