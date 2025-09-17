@@ -14,6 +14,31 @@
  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
+ <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
+
+ <script defer>
+  document.addEventListener('DOMContentLoaded', () => {
+    const KEY = 'theme';
+    const btn = document.querySelector('.theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (!btn) {
+      console.error('Button .theme-toggle not found');
+      return;
+    }
+
+    if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) && prefersDark)) {
+      document.body.classList.add('theme-dark');
+      btn.setAttribute('aria-pressed', 'true');
+    }
+
+    btn.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('theme-dark');
+      btn.setAttribute('aria-pressed', String(isDark));
+      localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+    });
+  });
+ </script>
  <header class="site-header">
  <a class="site-header__brand" href="/">Форсмажор</a>
  <nav class="site-nav" aria-label="Основная навигация">
@@ -45,7 +70,7 @@
  </section>
  <section id="portfolio">
  <h2>Портфолио</h2>
- <p>Примеры наших работ...</p>
+ <p>Примеры наших работ UWU</p>
  <div class = "image-container">
   <img src="assets/mems_2.webp" alt = "Изображение 640px" class="responsive-image" loading="lazy">
   <img src="assets/mems_3.webp" alt = "Изображение 960px" class="responsive-image" loading="lazy">
@@ -54,7 +79,7 @@
  </section>
  <section id="contacts">
  <h2>Контактная информация</h2>
- <p>Наши контакты...</p>
+ <p>Наши контакты. Все в наших контактах</p>
  <a href="contacts.html">Подробнее</a>
  <p></p>
  <button id="openDialog" type="button">Написать нам</button>
