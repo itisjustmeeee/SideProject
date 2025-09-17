@@ -10,8 +10,7 @@ dialog {
 }
 
 body.theme-dark input,
-body.theme-dark textarea,
-body.theme-dark select {
+body.theme-dark textarea {
     background-color: #2d2d2d;
     color: #ffffff;
     border: 1px solid #444;
@@ -20,8 +19,7 @@ body.theme-dark select {
 }
 
 body.theme-dark input:focus,
-body.theme-dark textarea:focus,
-body.theme-dark select:focus {
+body.theme-dark textarea:focus {
     outline: none;
     border-color: #66b366;
     box-shadow: 0 0 5px #66b3ff;
@@ -30,6 +28,41 @@ body.theme-dark select:focus {
 body.theme-dark input::placeholder,
 body.theme-dark textarea::placeholder {
     color: #a9a9a9;
+}
+
+body.theme-dark dialog select,
+body.theme-dark #contactFrom select {
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    min-height: 40px;
+}
+
+body.theme-dark dialog select:focus,
+body.theme-dark #contactFrom select:focus {
+    outline: none;
+    border-color: #66b3ff;
+    box-shadow: 0 0 5px #66b3ff;
+}
+
+body.theme-dark dialog select::after,
+body.theme-dark #contactFrom select::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    pointer-events: none;
+}
+
+body.theme-dark dialog option,
+body.theme-dark #contactFrom option {
+    background-color: #2d2d2d;
+    color: #ffffff;
 }
 
 html, body { margin: 0; padding: 0; }
