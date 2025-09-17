@@ -122,11 +122,3 @@ html{ scroll-behavior:smooth;}
     align-items: center;
     gap: 20px;
 }
-
-.contact-link {
-    display: block;
-    text-align: center;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #008000;
-}

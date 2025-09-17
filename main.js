@@ -81,11 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyTheme(isDark) {
         if (isDark) {
             document.body.classList.add('theme-dark');
-            btn?.setAttribute('aria-pressed', 'true');
         }
         else {
             document.body.classList.remove('theme-dark');
-            btn?.setAttribute('aria-pressed', 'false');
+        }
+
+        if (btn) {
+            btn.setAttribute('aria-pressed', String(isDark));
         }
     }
 
@@ -97,9 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTheme(false);
     }
 
-    btn?.addEventListener('click', () => {
-      const isDark = document.body.classList.toggle('theme-dark');
-      btn.setAttribute('aria-pressed', String(isDark));
-      localStorage.setItem(KEY, isDark ? 'dark' : 'light');
-    });
+    if (btn) {
+        btn.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('theme-dark');
+            btn.setAttribute('aria-pressed', String(isDark));
+            localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+      });
+    }
 });
