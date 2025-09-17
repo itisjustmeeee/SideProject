@@ -11,7 +11,7 @@ dialog {
 
 body.theme-dark input,
 body.theme-dark textarea,
-body.theme-dark.select {
+body.theme-dark select {
     background-color: #2d2d2d;
     color: #ffffff;
     border: 1px solid #444;
@@ -21,7 +21,7 @@ body.theme-dark.select {
 
 body.theme-dark input:focus,
 body.theme-dark textarea:focus,
-body.theme-dark.select:focus {
+body.theme-dark select:focus {
     outline: none;
     border-color: #66b366;
     box-shadow: 0 0 5px #66b3ff;
