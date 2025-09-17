@@ -44,7 +44,7 @@ body.theme-dark #contactFrom select {
 body.theme-dark dialog select:focus,
 body.theme-dark #contactFrom select:focus {
     outline: none;
-    border-color: #66b3ff;
+    border-color: #66b366;
     box-shadow: 0 0 5px #66b3ff;
 }
 
