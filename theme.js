@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   function applyTheme(isDark) {
-    console.log('Applying theme:', isDark ? 'dark' : 'light');
     if (isDark) {
       document.body.classList.add('theme-dark');
     } else {
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const savedTheme = localStorage.getItem(KEY);
-  console.log('Saved theme from localStorage:', savedTheme);
   if (savedTheme === 'dark') {
     applyTheme(true);
   } else if (savedTheme === 'light') {
