@@ -102,4 +102,4 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.setAttribute('aria-pressed', String(isDark));
       localStorage.setItem(KEY, isDark ? 'dark' : 'light');
     });
-  });
+});
