@@ -72,38 +72,3 @@ phone?.addEventListener('input', () => {
  phone.value = parts.join('');
 });
 phone?.setAttribute('pattern', '^\\+7 \\([0-9]{3}\\) [0-9]{3}-[0-9]{2}-[0-9]{2}$');
-
-document.addEventListener('DOMContentLoaded', () => {
-    const KEY = 'theme';
-    const btn = document.querySelector('.theme-toggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    function applyTheme(isDark) {
-        if (isDark) {
-            document.body.classList.add('theme-dark');
-        }
-        else {
-            document.body.classList.remove('theme-dark');
-        }
-
-        if (btn) {
-            btn.setAttribute('aria-pressed', String(isDark));
-        }
-    }
-
-    const savedTheme = localStorage.getItem(KEY);
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        applyTheme(true);
-    }
-    else {
-        applyTheme(false);
-    }
-
-    if (btn) {
-        btn.addEventListener('click', () => {
-            const isDark = document.body.classList.toggle('theme-dark');
-            btn.setAttribute('aria-pressed', String(isDark));
-            localStorage.setItem(KEY, isDark ? 'dark' : 'light');
-      });
-    }
-});
