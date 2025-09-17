@@ -103,7 +103,7 @@ html{ scroll-behavior:smooth;}
 
 @media (max-width: 1200px) {
     .responsive-image {
-        width: 45%;
+        width: 50%;
     }
 }
 
